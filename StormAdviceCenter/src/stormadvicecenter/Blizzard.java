@@ -22,6 +22,10 @@ public class Blizzard extends Storm
     }
     
     private String classification;
+
+    public void setTemp(int temp) {
+        this.temp = temp;
+    }
     int wind = getWindSpeed();
     private int temp;
     private String advice;// should i be be incorporating the advice with the classification calc or do it seperatly

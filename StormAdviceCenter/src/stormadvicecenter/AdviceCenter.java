@@ -5,12 +5,18 @@
  */
 package stormadvicecenter;
 
+
 /**
  *
  * @author Cristiano
  */
+
 public class AdviceCenter 
 {
+    // Give HashMap a try
+    
+    
+    
     private Storm[] storms;
     
     public AdviceCenter()
@@ -30,13 +36,13 @@ public class AdviceCenter
             }
         return false;
     }
-    public boolean removeStorm(Storm stormIn)
+    public boolean removeStorm(String nameIn)
     {
         for(int i=0; i<storms.length; i++)
         {
             if(storms[i] != null)
             {
-                if(storms[i].getName().equals(stormIn))
+                if(storms[i].getName().equals(nameIn))
                 {
                     storms[i] = null;
                     return true;
@@ -44,6 +50,21 @@ public class AdviceCenter
             }
         }
         return false;
+    }
+    public Storm search(String nameIn)
+    {
+        for(int i=0; i<storms.length; i++)
+        {
+            if(storms[i] != null)
+            {
+                if(storms[i].getName().equals(nameIn))
+                {
+                    storms[i] = null;
+                    return storms[i];
+                }
+            }
+        }
+        return null;
     }
     
 }

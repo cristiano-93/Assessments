@@ -17,7 +17,7 @@ public class StormAdviceCenter
         gui.pack();
         gui.setVisible(true);
         
-        System.out.println("hello world");
+        
         
         
     }

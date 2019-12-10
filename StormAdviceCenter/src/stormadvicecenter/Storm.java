@@ -11,23 +11,30 @@ package stormadvicecenter;
  */
 public abstract class Storm 
 {
-    protected String StormName;
-    protected int WindSpeed;
+    protected String stormName;
+    protected int windSpeed;
     
     public Storm (String nameIn, int windIn)
-    {
-        StormName = nameIn;
-        WindSpeed = windIn;
+    {        
+        stormName = nameIn;
+        windSpeed = windIn;
     }
     public String getName()
     {
-        return StormName;
+        return stormName;
+    }   
+
+    public void setStormName(String StormName) {
+        this.stormName = StormName;
+    }
+
+    public void setWindSpeed(int WindSpeed) {
+        this.windSpeed = WindSpeed;
     }
     public int getWindSpeed()
     {
-        return WindSpeed;
+        return windSpeed;
     }
-    //do we also need Setters?
     
     public abstract String calcClass();
     public abstract String getAdvice();
