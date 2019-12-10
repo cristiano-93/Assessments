@@ -27,6 +27,8 @@ public abstract class Storm
     {
         return WindSpeed;
     }
+    //do we also need Setters?
+    
     public abstract String calcClass();
     public abstract String getAdvice();
 }

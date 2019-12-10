@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stormadvicecenter;
 
 import java.util.Scanner;
@@ -41,6 +36,7 @@ public class Screen extends JFrame //implements ActionListener
     private JTextField txtwind;
     private JTextField txttemp;
     
+    //add Search button    
     private JButton btnAdd;
     private JButton btnEdit;
     private JButton btnRemove;
@@ -71,9 +67,9 @@ public class Screen extends JFrame //implements ActionListener
             lblRwind = new JLabel("wind");
             lblRtemp = new JLabel("temp");
 
-            txtname = new JTextField();
-            txtwind = new JTextField();
-            txttemp = new JTextField();
+            txtname = new JTextField(50);// setting char limit to 50
+            txtwind = new JTextField(50);
+            txttemp = new JTextField(50);
             
             btnAdd = new JButton("Add");
             //btnAdd.addActionListener(this);
@@ -149,6 +145,7 @@ public class Screen extends JFrame //implements ActionListener
             
             constraints.gridx = 3;
             this.add(lblRtemp, constraints);
+            
             
         }
     //@Override

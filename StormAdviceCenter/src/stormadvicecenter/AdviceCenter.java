@@ -11,6 +11,39 @@ package stormadvicecenter;
  */
 public class AdviceCenter 
 {
+    private Storm[] storms;
     
+    public AdviceCenter()
+    {
+        storms = new Storm[20];
+    }
+    
+    public boolean addStorm(Storm stormIn)
+    {
+        for(int i=0; i<storms.length; i++)
+            {
+                if(storms[i] == null)
+                {
+                    storms[i] = stormIn;
+                    return true;
+                }
+            }
+        return false;
+    }
+    public boolean removeStorm(Storm stormIn)
+    {
+        for(int i=0; i<storms.length; i++)
+        {
+            if(storms[i] != null)
+            {
+                if(storms[i].getName().equals(stormIn))
+                {
+                    storms[i] = null;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     
 }

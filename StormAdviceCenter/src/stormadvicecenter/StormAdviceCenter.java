@@ -17,12 +17,7 @@ public class StormAdviceCenter
         gui.pack();
         gui.setVisible(true);
         
-        Storm[] storms = new Storm [20];
         
-        for (int i=0; i<storms.length;i++)
-        {
-            System.out.println(storms[i].getName());
-        }
     }
     
     
