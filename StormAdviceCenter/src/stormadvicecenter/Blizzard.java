@@ -13,19 +13,13 @@ public class Blizzard extends Storm
 {    
     public Blizzard (String nameIn, int windIn, int tempIn)
     {
-        super(nameIn, windIn);
-        tempIn = temp;
+        super(nameIn, windIn, tempIn);
     }
-    public int getTemp()
-    {
-        return temp;
-    }
+    
     
     private String classification;
 
-    public void setTemp(int temp) {
-        this.temp = temp;
-    }
+    
     int wind = getWindSpeed();
     private int temp;
     private String advice;// should i be be incorporating the advice with the classification calc or do it seperatly

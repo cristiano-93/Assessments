@@ -5,6 +5,8 @@
  */
 package stormadvicecenter;
 
+import java.util.ArrayList;
+
 
 /**
  *
@@ -14,10 +16,12 @@ package stormadvicecenter;
 public class AdviceCenter 
 {
     // Give HashMap a try
+    // give arraylist a try
     
-    
+        
     
     private Storm[] storms;
+    private Storm s;
     
     public AdviceCenter()
     {
@@ -51,20 +55,50 @@ public class AdviceCenter
         }
         return false;
     }
-    public Storm search(String nameIn)
-    {
+    public String search(String nameIn)
+    {        
         for(int i=0; i<storms.length; i++)
         {
             if(storms[i] != null)
             {
                 if(storms[i].getName().equals(nameIn))
                 {
-                    storms[i] = null;
-                    return storms[i];
+                    return "<html>Storm Name: "+storms[i].getName() +"<BR> Wind Speed: "+
+                            storms[i].getWindSpeed() +"<BR>Temperature: "+ storms[i].getTemp()+"</html>";
                 }
             }
         }
         return null;
     }
+    public String edit(String nameIn, int wind, int temp) //should i have a seperate string to change the name
+    {
+        for(int i=0; i<storms.length; i++)
+        {
+            if(storms[i] != null)
+            {
+                if(storms[i].getName().equals(nameIn))
+                {                    
+                    storms[i].setWindSpeed(wind);
+                    storms[i].setTemp(temp);
+                }
+            }
+        }    
+        return null;
+    }
+    public String display()
+    {
+        for(int i=0; i<storms.length; i++)
+        {
+            if(storms[i]==null)
+            {
+                return "There are no stored Storms";
+            }
+            return "<html>"+storms[i].getName() +"<BR>"+ storms[i].getWindSpeed() 
+                    +"<BR>"+ storms[i].getTemp()+"<BR>"+s.getAdvice()+"</html>";
+            
+        }
+        return null;        
+    }
+
     
 }

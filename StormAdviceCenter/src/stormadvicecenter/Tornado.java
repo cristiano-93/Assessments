@@ -11,9 +11,9 @@ package stormadvicecenter;
  */
 public class Tornado extends Storm
 {
-    public Tornado (String nameIn, int windIn)
+    public Tornado (String nameIn, int windIn, int tempIn)
     {
-        super(nameIn, windIn);
+        super(nameIn, windIn, tempIn);
     }
     
     private String classification;

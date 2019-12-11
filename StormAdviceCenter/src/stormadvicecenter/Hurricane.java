@@ -11,13 +11,14 @@ package stormadvicecenter;
  */
 public class Hurricane extends Storm
 {
-    public Hurricane (String nameIn, int windIn)
+    public Hurricane (String nameIn, int windIn, int tempIn)
     {
-        super(nameIn, windIn);
+        super(nameIn, windIn, tempIn);
     }
     
     private String category;
     private String advice;
+    private Storm s;
     
     @Override
     public String calcClass()

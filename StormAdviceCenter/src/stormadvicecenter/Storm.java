@@ -13,11 +13,13 @@ public abstract class Storm
 {
     protected String stormName;
     protected int windSpeed;
+    protected int temp;
     
-    public Storm (String nameIn, int windIn)
+    public Storm (String nameIn, int windIn, int tempIn)
     {        
         stormName = nameIn;
         windSpeed = windIn;
+        temp = tempIn;
     }
     public String getName()
     {
@@ -26,6 +28,14 @@ public abstract class Storm
 
     public void setStormName(String StormName) {
         this.stormName = StormName;
+    }
+
+    public int getTemp() {
+        return temp;
+    }
+
+    public void setTemp(int temp) {
+        this.temp = temp;
     }
 
     public void setWindSpeed(int WindSpeed) {
