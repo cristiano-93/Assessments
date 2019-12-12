@@ -63,8 +63,8 @@ public class AdviceCenter
             {
                 if(storms[i].getName().equals(nameIn))
                 {
-                    return "<html>Storm Name: "+storms[i].getName() +"<BR> Wind Speed: "+
-                            storms[i].getWindSpeed() +"<BR>Temperature: "+ storms[i].getTemp()+"</html>";
+                    return "<html>Storm name: "+storms[i].getName() +"<BR>Wind Speed: "+ storms[i].getWindSpeed() 
+                    +"<BR>Temperature: "+ storms[i].getTemp()+"<BR>Advice"+"<BR>"+storms[i].getAdvice()+"</html>";
                 }
             }
         }
@@ -85,16 +85,17 @@ public class AdviceCenter
         }    
         return null;
     }
-    public String display()
+    public String display()// cant print all the stored storms
     {
+        String out = "";
         for(int i=0; i<storms.length; i++)
         {
             if(storms[i]==null)
             {
                 return "There are no stored Storms";
             }
-            return "<html>"+storms[i].getName() +"<BR>"+ storms[i].getWindSpeed() 
-                    +"<BR>"+ storms[i].getTemp()+"<BR>"+s.getAdvice()+"</html>";
+        return "<html>Storm name: "+storms[i].getName() +"<BR>Wind Speed: "+ storms[i].getWindSpeed() 
+                +"<BR>Temperature: "+ storms[i].getTemp()+"<BR>Advice"+"<BR>"+storms[i].getAdvice()+"</html>"+i++;
             
         }
         return null;        

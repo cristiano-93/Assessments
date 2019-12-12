@@ -64,7 +64,7 @@ public class Screen extends JFrame implements ActionListener
             lblwind = new JLabel("Wind Speed");
             lbltemp = new JLabel("Temperature"); 
             lblscreen = new JLabel("Screen");
-            lbladvice = new JLabel("Advice");
+            lbladvice = new JLabel();
 
             txtname = new JTextField();// setting char limit to 50
             txttype = new JTextField();
@@ -180,7 +180,8 @@ public class Screen extends JFrame implements ActionListener
                 }
                 else
                 {
-                    lblscreen.setText("Storm not Added**********needs better text**********");
+                    lblscreen.setText("<html>Storm System is operating at full capacity<BR>"
+                            + "Unable to add any more storms to the system</html>");
                 }
             }
             else if(ev.getSource().equals(btnEdit))
@@ -193,17 +194,12 @@ public class Screen extends JFrame implements ActionListener
             }
             else if(ev.getSource().equals(btnSearch))
             {
-                String name = txtname.getText();
-                //ac.search(name);
-                 lblscreen.setText(ac.search(name));
-                 lbladvice.setText(s.getAdvice());      //advice not showing
-                
+                String name = txtname.getText();                
+                lblscreen.setText(ac.search(name));                
             }
             else if(ev.getSource().equals(btnDisplay))
-            {
-                
-                lblscreen.setText(ac.display());
-                
+            {                
+                lblscreen.setText(ac.display());                
             }  
             else if(ev.getSource().equals(btnRemove))
             {
@@ -217,8 +213,7 @@ public class Screen extends JFrame implements ActionListener
                 {
                     lblscreen.setText("Storm not found");
                 }
-            }
-            
+            }            
         }
     
 }
