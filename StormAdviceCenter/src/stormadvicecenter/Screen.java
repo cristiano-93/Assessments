@@ -5,18 +5,25 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
  * @author Cristiano
  */
-public class Screen extends JFrame implements ActionListener 
+public class Screen extends JFrame implements ActionListener, ListSelectionListener
 {
     private GridBagConstraints constraints;    
     
@@ -25,7 +32,7 @@ public class Screen extends JFrame implements ActionListener
     private JLabel lblwind;
     private JLabel lbltemp;  
     private JLabel lblscreen;
-    private JLabel lbladvice;
+    private JLabel lbladvice;    
     
     private JTextField txttype;
     private JTextField txtname;
@@ -37,6 +44,17 @@ public class Screen extends JFrame implements ActionListener
     private JButton btnRemove;
     private JButton btnSearch;
     private JButton btnDisplay;
+    
+    private JList list;
+    private DefaultListModel listModel;
+    //testing
+    private static final String hireString = "Hire";
+    private static final String fireString = "Fire";
+    private JButton firebutton;
+    private JTextField employeeName;
+    
+    String[]comboxList ={"Blizzard","Hurricane", "Tornado"};
+    JComboBox combox = new JComboBox(comboxList);
     
     private AdviceCenter ac;
     private Storm s;
@@ -56,6 +74,20 @@ public class Screen extends JFrame implements ActionListener
 		
 		// Create layout
 		layoutComponents();
+                
+                listModel = new DefaultListModel();
+                listModel.addElement("testing1");
+                listModel.addElement("testing2");
+                listModel.addElement("testing3");
+                listModel.addElement("testing4");
+                
+                list = new JList(listModel);
+                list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                list.setSelectedIndex(0);
+                list.addListSelectionListener(this);
+                list.setVisibleRowCount(5);
+                JScrollPane listScrollPane = new JScrollPane(list);
+                
         }
     public void initComponents()
         {
@@ -63,10 +95,10 @@ public class Screen extends JFrame implements ActionListener
             lblname = new JLabel("Storm Name");
             lblwind = new JLabel("Wind Speed");
             lbltemp = new JLabel("Temperature"); 
-            lblscreen = new JLabel("Screen");
-            lbladvice = new JLabel();
+            lblscreen = new JLabel("*Screen*");
+            lbladvice = new JLabel();            
 
-            txtname = new JTextField();// setting char limit to 50
+            txtname = new JTextField(5);// setting char limit to 50
             txttype = new JTextField();
             txtwind = new JTextField();
             txttemp = new JTextField();
@@ -141,7 +173,7 @@ public class Screen extends JFrame implements ActionListener
             
             constraints.gridy = 7;
             constraints.gridx = 0;
-            this.add(lbladvice, constraints);
+            this.add(combox, constraints);
         }
     //@Override
     public void actionPerformed(ActionEvent ev)
@@ -187,6 +219,7 @@ public class Screen extends JFrame implements ActionListener
             else if(ev.getSource().equals(btnEdit))
             {
                 String nameIn = txtname.getText();
+                
                 int windIn = Integer.parseInt(txtwind.getText());
                 int tempIn = Integer.parseInt(txttemp.getText());
                 
@@ -215,5 +248,10 @@ public class Screen extends JFrame implements ActionListener
                 }
             }            
         }
+
+    @Override
+    public void valueChanged(ListSelectionEvent lse) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

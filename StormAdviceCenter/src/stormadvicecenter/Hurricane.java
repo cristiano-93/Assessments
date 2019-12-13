@@ -16,7 +16,7 @@ public class Hurricane extends Storm
         super(nameIn, windIn, tempIn);
     }
     
-    private String category;
+    private String classification;
     private String advice;
     private Storm s;
     
@@ -26,29 +26,29 @@ public class Hurricane extends Storm
         int wind = getWindSpeed();
         if(wind > 74 && wind <95)
         {
-            category = "Category I";            
+            classification = "Category I";            
         }
         else if(wind > 96 && wind < 110)
         {
-            category = "Category II";
+            classification = "Category II";
         }
         else if(wind > 111 && wind < 129)
         {
-            category = "Category III";
+            classification = "Category III";
         }
         else if(wind > 130 && wind < 156)
         {
-            category = "Category IV";
+            classification = "Category IV";
         }
         else if(wind > 156)
         {
-            category = "Category V";
+            classification = "Category V";
         }
         else 
         {
-            category = "Tropical Storm";
+            classification = "Tropical Storm";
         }
-        return category;
+        return classification;
     }
     
     @Override

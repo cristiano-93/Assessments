@@ -15,14 +15,16 @@ public class StormAdviceCenter
     {
         Screen gui = new Screen();
         gui.pack();
-        gui.setVisible(true);
-        
-        
-        
-        
+        gui.setVisible(true);    
     }
     
+    /*
+                Notes
+    
+    Rearrange the GUI
+    print storm details to txtfields in the edit button
     
     
     
+    */
 }
