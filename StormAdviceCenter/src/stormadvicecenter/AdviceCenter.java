@@ -5,9 +5,6 @@
  */
 package stormadvicecenter;
 
-import java.util.ArrayList;
-
-
 /**
  *
  * @author Cristiano
@@ -62,8 +59,11 @@ public class AdviceCenter
             {
                 if(storms[i].getName().equals(nameIn))
                 {
-                    return "<html>Storm name: "+storms[i].getName() + "<BR>Wind Speed: "+ storms[i].getWindSpeed() 
-                + " mph" +"<BR>Temperature: "+ storms[i].getTemp()+ " °C"  + "<BR>Classification: "+storms[i].calcClass()+"<BR>"+"<BR>Advice"+"<BR>"+storms[i].getAdvice()+"</html>";
+                    String nameout = storms[i].getName();
+                    int windout = storms[i].getWindSpeed();
+                    int tempout = storms[i].getTemp();
+                    String adviceout = storms[i].getAdvice();
+                    return nameout,windout,tempout,adviceout;
                 }
             }
         }
@@ -83,24 +83,5 @@ public class AdviceCenter
             }
         }    
         return null;
-    }
-    public String display()// cant print all the stored storms
-    {        
-        for(int i=0; i<storms.length; i++)
-        {
-            if(storms[i]==null)
-            {
-                return "There are no stored Storms";
-            }
-            else if(storms[i]!= null)
-            {
-                return "<html>Storm name: "+storms[i].getName()+"<BR>"+"</html>";
-            }
-        //return "<html>Storm name: "+storms[i].getName()+"<BR>"+"</html>";
-            
-        }
-        return null;        
-    }
-
-    
+    }   
 }

@@ -1,180 +1,180 @@
 package stormadvicecenter;
 
-import java.util.Scanner;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.DefaultListModel;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-
+import javax.swing.*;
 /**
  *
  * @author Cristiano
  */
-public class Screen extends JFrame implements ActionListener, ListSelectionListener
-{
-    private GridBagConstraints constraints;    
-    
-    private JLabel lbltype;
-    private JLabel lblname;
-    private JLabel lblwind;
-    private JLabel lbltemp;  
-    private JLabel lblscreen;
-    private JLabel lbladvice;    
-    
-    private JTextField txttype;
-    private JTextField txtname;
-    private JTextField txtwind;
-    private JTextField txttemp;
-           
-    private JButton btnAdd;
-    private JButton btnEdit;
-    private JButton btnRemove;
-    private JButton btnSearch;
-    private JButton btnDisplay;
-    
-    private JList list;
-    private DefaultListModel listModel;
-    //testing
-    private static final String hireString = "Hire";
-    private static final String fireString = "Fire";
-    private JButton firebutton;
-    private JTextField employeeName;
-    
-    String[]comboxList ={"Blizzard","Hurricane", "Tornado"};
-    JComboBox combox = new JComboBox(comboxList);
-    
-    private AdviceCenter ac;
-    private Storm s;
-    
-    
-    public Screen()
-	{
-		this.setTitle("Storm Advice Center");
-                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                this.setLayout(new GridBagLayout());
-                constraints = new GridBagConstraints();
-                
-		ac = new AdviceCenter();
-                
-		// Set up our components
-		initComponents();
-		
-		// Create layout
-		layoutComponents();
-                
-                listModel = new DefaultListModel();
-                listModel.addElement("testing1");
-                listModel.addElement("testing2");
-                listModel.addElement("testing3");
-                listModel.addElement("testing4");
-                
-                list = new JList(listModel);
-                list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-                list.setSelectedIndex(0);
-                list.addListSelectionListener(this);
-                list.setVisibleRowCount(5);
-                JScrollPane listScrollPane = new JScrollPane(list);
-                
-        }
-    public void initComponents()
-        {
-            lbltype = new JLabel("Storm Type");
-            lblname = new JLabel("Storm Name");
-            lblwind = new JLabel("Wind Speed");
-            lbltemp = new JLabel("Temperature"); 
-            lblscreen = new JLabel("*Screen*");
-            lbladvice = new JLabel();            
+public class Screen extends JFrame implements ActionListener
+    {
+        private JPanel panelAddStorm;
+        private JPanel panelButtons;
+        private JPanel panelScreen;
+        
+        private JLabel lblname;
+        private JLabel lblwind;
+        private JLabel lbltemp;
+        private JLabel lbltype;
+        private JLabel lblclass;
 
-            txtname = new JTextField(5);// setting char limit to 50
-            txttype = new JTextField();
-            txtwind = new JTextField();
-            txttemp = new JTextField();
-            
-            btnAdd = new JButton    ("     Add    ");
-            btnAdd.addActionListener(this);
-            btnEdit = new JButton   ("    Edit    ");
-            btnEdit.addActionListener(this);
-            btnSearch = new JButton ("   Search   ");
-            btnSearch.addActionListener(this);
-            btnDisplay = new JButton("Display All");
-            btnDisplay.addActionListener(this);
-            btnRemove = new JButton ("   Remove   ");
-            btnRemove.addActionListener(this);
-        }
-    public void layoutComponents()
-        {
-            constraints.gridy = 0;
-            constraints.gridx = 0;
-            constraints.gridwidth = 3;
-            this.add(lbltype, constraints);
-            constraints.fill = GridBagConstraints.HORIZONTAL;
-            
-            constraints.gridx = 4;
-            this.add(txttype, constraints);
-            
-            constraints.gridy = 1;
-            constraints.gridx = 0;
-            this.add(lblname, constraints);
-            
-            constraints.gridx = 4;
-            this.add(txtname, constraints);
-                                   
-            constraints.gridy = 2;
-            constraints.gridx = 0;
-            this.add(lblwind, constraints);
-            
-            constraints.gridx = 4;
-            this.add(txtwind, constraints);
-                        
-            constraints.gridy = 3;
-            constraints.gridx = 0;
-            this.add(lbltemp, constraints);
-            
-            constraints.gridx = 4;
-            this.add(txttemp, constraints);            
-            
-            constraints.fill = GridBagConstraints.NONE;            
-            constraints.gridy = 4;
-            constraints.gridx = 0;
-            constraints.gridwidth = 2;
-            this.add(btnAdd, constraints);
-            
-            constraints.gridx = 2;
-            this.add(btnEdit, constraints);
-                                    
-            constraints.gridx = 4;
-            this.add(btnRemove, constraints);     
-            
-            constraints.gridy = 5;
-            constraints.gridx = 0;
-            constraints.gridwidth = 3;
-            this.add(btnSearch, constraints);
-            
-            constraints.gridx = 3;
-            this.add(btnDisplay, constraints);
-            
-            constraints.gridy = 6;
-            constraints.gridx = 0;
-            constraints.gridwidth = 6;
-            this.add(lblscreen, constraints);
-            
-            constraints.gridy = 7;
-            constraints.gridx = 0;
-            this.add(combox, constraints);
-        }
+        private JTextField txtname;
+        private JTextField txtwind;
+        private JTextField txttemp;
+
+        private JButton btnAdd;
+        private JButton btnEdit;
+        private JButton btnRemove;
+        private JButton btnSearch;
+
+        private JTextArea txtascreen;
+        private JComboBox combox;
+
+        String name;
+        String wind;
+        String temp;
+        String type;
+        
+        private AdviceCenter ac;    
+        
+    public Screen()
+    {
+        this.setTitle("Storm Advice Center");
+        //this.setSize(500, 500); 
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
+        BoxLayout box = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS);
+        this.setLayout(box);
+        this.pack();
+        this.setVisible(true);
+       
+        //Initiate the components
+        initComponents(); 
+        AddPanelAddStorm();
+        AddPanelButtons();
+        AddPanelScreen();
+    }
+    public void initComponents()
+    {    
+        lbltype = new JLabel("Storm Type");
+        lblname = new JLabel("Storm Name");
+        lblwind = new JLabel("Wind Speed");
+        lbltemp = new JLabel("Temperature");
+        lblclass = new JLabel("Classification");            
+
+        txtname = new JTextField(20);
+        txtwind = new JTextField(20);
+        txttemp = new JTextField(20);
+
+        btnAdd = new JButton    ("   Add  ");  
+        btnAdd.addActionListener(this);
+        btnEdit = new JButton   ("  Edit  "); 
+        btnEdit.addActionListener(this);
+        btnSearch = new JButton (" Search ");                 
+        btnSearch.addActionListener(this);
+        btnRemove = new JButton (" Remove ");
+        btnRemove.addActionListener(this);
+
+        combox = new JComboBox();
+        combox.addItem("Hurricane");
+        combox.addItem("Tornado");
+        combox.addItem("Blizzard");
+        combox.setBackground(Color.WHITE);
+        
+        txtascreen = new JTextArea(6,36);
+        txtascreen.setEditable(false);
+
+        panelAddStorm = new JPanel(new GridBagLayout());
+        panelButtons = new JPanel(new GridBagLayout());
+        panelScreen = new JPanel(new GridBagLayout());                        
+    }
+    private void AddPanelAddStorm()
+    {
+        GridBagConstraints gbc = new GridBagConstraints();
+        panelAddStorm.setLayout(new GridBagLayout());
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        //add insets??? look at end result
+        
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridy = 0;
+        gbc.gridx = 0;
+        panelAddStorm.add(lbltype, gbc);
+        
+        gbc.gridx = 1;
+        panelAddStorm.add(combox, gbc);  
+        
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridy = 1;
+        gbc.gridx = 0;
+        panelAddStorm.add(lblname, gbc);
+        
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 1;
+        panelAddStorm.add(txtname, gbc);
+        
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridy = 2;
+        gbc.gridx = 0;
+        panelAddStorm.add(lblwind, gbc);
+        
+        gbc.fill = GridBagConstraints.HORIZONTAL;        
+        gbc.gridx = 1;
+        panelAddStorm.add(txtwind, gbc);
+        
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridy = 3;
+        gbc.gridx = 0;
+        panelAddStorm.add(lbltemp, gbc);
+        
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 1;
+        panelAddStorm.add(txttemp, gbc);
+        
+        this.add(panelAddStorm);
+    }
+    private void AddPanelButtons()
+    {
+        GridBagConstraints gbc = new GridBagConstraints();
+        panelButtons.setLayout(new GridBagLayout());
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        
+        gbc.fill = GridBagConstraints.NONE;//check if leaving it at NONE affects end result
+        gbc.gridy = 0;
+        gbc.gridx = 0;
+        panelButtons.add(btnAdd, gbc);
+        
+        //gbc.fill = GridBagConstraints.NONE;        
+        gbc.gridx = 1;
+        panelButtons.add(btnRemove, gbc);
+        
+        //gbc.fill = GridBagConstraints.NONE;        
+        gbc.gridx = 2;
+        panelButtons.add(btnEdit, gbc);
+        
+        //gbc.fill = GridBagConstraints.NONE;        
+        gbc.gridx = 3;
+        panelButtons.add(btnSearch, gbc);
+        
+        this.add(panelButtons); 
+    }
+    private void AddPanelScreen()
+    {
+        GridBagConstraints gbc = new GridBagConstraints();
+        panelScreen.setLayout(new GridBagLayout());
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        
+        gbc.fill = GridBagConstraints.NONE;        
+        gbc.gridy = 0;
+        gbc.gridx = 0;
+        panelScreen.add(txtascreen, gbc);
+        
+        this.add(panelScreen);
+    }
     //@Override
     public void actionPerformed(ActionEvent ev)
         {            
@@ -182,10 +182,11 @@ public class Screen extends JFrame implements ActionListener, ListSelectionListe
             
             if(ev.getSource().equals(btnAdd))
             {
-                String type = txttype.getText();
+                String type = combox.getSelectedItem().toString();
                 String name = txtname.getText();
                 int wind = Integer.parseInt(txtwind.getText());
                 int temp = Integer.parseInt(txttemp.getText());
+                txtascreen.setText(null);                       //check if this line is required
                 
                  Storm s = null;//copy from javaapp1
                 
@@ -203,16 +204,16 @@ public class Screen extends JFrame implements ActionListener, ListSelectionListe
                 }
                 else //not working
                 {
-                    lblscreen.setText("Storm type not Supported");
+                    
                 }
                 
                 if(ac.addStorm(s))
                 {
-                    lblscreen.setText("Storm Added");
+                    txtascreen.append("Storm Added");
                 }
                 else
                 {
-                    lblscreen.setText("<html>Storm System is operating at full capacity<BR>"
+                    txtascreen.append("<html>Storm System is operating at full capacity<BR>"
                             + "Unable to add any more storms to the system</html>");
                 }
             }
@@ -228,30 +229,20 @@ public class Screen extends JFrame implements ActionListener, ListSelectionListe
             else if(ev.getSource().equals(btnSearch))
             {
                 String name = txtname.getText();                
-                lblscreen.setText(ac.search(name));                
+                txtascreen.append(ac.search(name));                
             }
-            else if(ev.getSource().equals(btnDisplay))
-            {                
-                lblscreen.setText(ac.display());                
-            }  
             else if(ev.getSource().equals(btnRemove))
             {
                 String name = txtname.getText();             
                 
                 if(ac.removeStorm(name))
                 {
-                    lblscreen.setText("Storm Removed");
+                    txtascreen.append("Storm Removed");
                 }
                 else
                 {
-                    lblscreen.setText("Storm not found");
+                    txtascreen.append("Storm not found");
                 }
             }            
-        }
-
-    @Override
-    public void valueChanged(ListSelectionEvent lse) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        }    
 }
