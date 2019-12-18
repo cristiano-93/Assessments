@@ -12,7 +12,6 @@ package stormadvicecenter;
 
 public class AdviceCenter 
 {
-    // Give HashMap a try
     // give arraylist a try
     
         
@@ -59,11 +58,12 @@ public class AdviceCenter
             {
                 if(storms[i].getName().equals(nameIn))
                 {
-                    String nameout = storms[i].getName();
-                    int windout = storms[i].getWindSpeed();
-                    int tempout = storms[i].getTemp();
-                    String adviceout = storms[i].getAdvice();
-                    return nameout,windout,tempout,adviceout;
+                    String output = "Storm Name: "+storms[i].getName()
+                            +"Wind Speed: "+storms[i].getWindSpeed()
+                            +"Temperature: "+storms[i].getTemp()
+                            +"Classification: "+storms[i].calcClass()
+                            +storms[i].getAdvice();
+                    return output;
                 }
             }
         }
@@ -83,5 +83,6 @@ public class AdviceCenter
             }
         }    
         return null;
-    }   
+    }  
+    
 }

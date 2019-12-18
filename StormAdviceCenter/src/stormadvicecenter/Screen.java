@@ -3,7 +3,6 @@ package stormadvicecenter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 /**
  *
@@ -42,8 +41,7 @@ public class Screen extends JFrame implements ActionListener
         
     public Screen()
     {
-        this.setTitle("Storm Advice Center");
-        //this.setSize(500, 500); 
+        this.setTitle("Storm Advice Center"); 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
         BoxLayout box = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS);
         this.setLayout(box);
@@ -186,9 +184,9 @@ public class Screen extends JFrame implements ActionListener
                 String name = txtname.getText();
                 int wind = Integer.parseInt(txtwind.getText());
                 int temp = Integer.parseInt(txttemp.getText());
-                txtascreen.setText(null);                       //check if this line is required
+                //txtascreen.setText(null);                       //check if this line is required
                 
-                 Storm s = null;//copy from javaapp1
+                Storm s = null;//copy from javaapp1
                 
                 if(type.equals("Hurricane"))
                 {
@@ -202,14 +200,14 @@ public class Screen extends JFrame implements ActionListener
                 {
                     s = new Blizzard(name, wind, temp);                    
                 }
-                else //not working
+                else //not working and probably not needed
                 {
-                    
+                    txtascreen.setText("invalid");
                 }
                 
                 if(ac.addStorm(s))
                 {
-                    txtascreen.append("Storm Added");
+                    txtascreen.append("Storm Added" + "\n");
                 }
                 else
                 {
@@ -226,10 +224,10 @@ public class Screen extends JFrame implements ActionListener
                 
                 ac.edit(nameIn, windIn, tempIn);
             }
-            else if(ev.getSource().equals(btnSearch))
+            else if(ev.getSource().equals(btnSearch))               // might be working. check
             {
-                String name = txtname.getText();                
-                txtascreen.append(ac.search(name));                
+                String name = txtname.getText();  
+                txtascreen.append(ac.search(name)+"\nName");                
             }
             else if(ev.getSource().equals(btnRemove))
             {

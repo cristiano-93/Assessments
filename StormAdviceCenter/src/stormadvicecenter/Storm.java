@@ -46,6 +46,7 @@ public abstract class Storm
         return windSpeed;
     }
     
+    
     public abstract String calcClass();
     public abstract String getAdvice();
 }
