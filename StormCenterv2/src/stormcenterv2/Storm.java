@@ -24,29 +24,24 @@ public abstract class Storm
     public String getName()
     {
         return stormName;
-    }   
-
-    public void setStormName(String StormName) {
-        this.stormName = StormName;
-    }
-
+    }      
     public int getTemp() {
         return temp;
     }
-
+    public int getWindSpeed(){
+        return windSpeed;
+    }
+    
+    public void setStormName(String StormName) {
+        this.stormName = StormName;
+    }     
     public void setTemp(int temp) {
         this.temp = temp;
     }
-    
-    public int getWindSpeed()
-        {
-            return windSpeed;
-        }
-    
     public void setWindSpeed(int WindSpeed) {
         this.windSpeed = WindSpeed;
     }
-            
+       
     public abstract String calcClass();
     public abstract String getAdvice();
 }

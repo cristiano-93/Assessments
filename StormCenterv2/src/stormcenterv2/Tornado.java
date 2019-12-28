@@ -66,7 +66,7 @@ public class Tornado extends Storm
         }
         else if (wind >= 113)
         {
-            advice = "Find underground shelter, crouch near to the floor covering your head with your hands";
+            advice = "Find underground shelter, \ncrouch near to the floor covering your head with your hands";
         }
         else
         {

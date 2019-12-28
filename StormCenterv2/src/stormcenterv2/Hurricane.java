@@ -58,11 +58,11 @@ public class Hurricane extends Storm
         
         if(wind <= 110)
         {
-            advice = "“Close storm shutters and stay away from windows";            
+            advice = "Close storm shutters and stay away from windows";            
         }        
         else if(wind > 111 && wind < 129)
         {
-            advice = "“Coastal regions are encouraged to evacuate";
+            advice = "Coastal regions are encouraged to evacuate";
         }
         else if(wind >= 130)
         {

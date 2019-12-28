@@ -14,23 +14,25 @@ import java.util.ArrayList;
 public class Center 
 {
     private ArrayList<Storm> storms = new ArrayList<>();
-    private Storm s;
     
     public ArrayList<Storm> getStormList()
     {
         return storms;
     }
-    public boolean sizeCheck()
+    public boolean alreadyExists(String nameIn)
     {
-        if(storms.size()>= 20)
+        for (int i = 0; i < storms.size(); i++)
         {
-            return false;
-        }
-        return true;
+            if(storms.get(i).getName().equals(nameIn))
+            {
+                return false;
+            }
+            
+        }return true;
     }
     public int typeCheck(String typeIn)
     {
-        if(typeIn.equals("Hurricane")){             //turn if's into Switch cases
+        if(typeIn.equals("Hurricane")){
             return 1;
         }
         else if(typeIn.equals("Tornado")){
@@ -42,41 +44,77 @@ public class Center
         else{
             return 0;
         }
-    }    
-    public void addStorm(String nameIn, int windIn, int tempIn,String typeIn)
+    }
+    public String addStorm (String nameIn, int windIn, int tempIn, String typeIn)
     {
-        Hurricane hurricane = new Hurricane(nameIn, windIn, tempIn);
-        Tornado tornado = new Tornado(nameIn, windIn, tempIn);
-        Blizzard blizzard = new Blizzard(nameIn, windIn, tempIn);
-        
-        switch (typeCheck(typeIn)) {
-            case 1:            
-                storms.add(hurricane);
-                break;
-            case 2:
-                storms.add(tornado);
-                break;
-            case 3:
-                storms.add(blizzard);
-                break;
-            default:
-                break;
-        }
-    }    
-    public String addStormCheck (String nameIn, int windIn, int tempIn, String typeIn)
-    {
-        if(sizeCheck())
+        String result = "Storm name already in the system";
+      
+        if(typeCheck(typeIn)==1)
         {
-            if(typeCheck(typeIn)!=0)
+            if(storms.size()<20)
             {
-                addStorm(nameIn, windIn, tempIn, typeIn);
-                return "Storm Added";
+                if(alreadyExists(nameIn))
+                {
+                    Hurricane hurricane = new Hurricane(nameIn, windIn, tempIn);
+                    storms.add(hurricane);
+                    result = "Hurricane Added";
+                    return result;
+                }
             }
-            return "random text";       //this might not be needed
+            else
+                result = "Storm System is operating at full capacity"
+                            + "\nUnable to add any more storms to the system";
         }
-        return "<html>Storm System is operating at full capacity<BR>"
-                            + "Unable to add any more storms to the system</html>";
-    }       
+        else if (typeCheck(typeIn)==2)
+        {
+            if(storms.size()<20)
+            {
+                if(alreadyExists(nameIn))
+                {
+                    Tornado tornado = new Tornado(nameIn, windIn, tempIn);
+                    storms.add(tornado);
+                    result = "Tornado Added";
+                    return result;
+                }
+            }
+            else
+                result = "Storm System is operating at full capacity"
+                            + "\nUnable to add any more storms to the system";
+        }
+        else if (typeCheck(typeIn)==3)
+        {
+            if(storms.size()<20)
+            {
+                if(alreadyExists(nameIn))
+                {
+                    Blizzard blizzard = new Blizzard(nameIn, windIn, tempIn);
+                    storms.add(blizzard);
+                    result = "Blizzard Added";
+                    return result;
+                }
+            }
+            else
+                result = "Storm System is operating at full capacity"
+                            + "\nUnable to add any more storms to the system";
+        }
+        return result;
+    } 
+    public String output(String nameIn)
+    {
+        String output="error";
+        for (int i = 0; i < storms.size(); i++)
+        {
+            if(storms.get(i).stormName.equals(nameIn))
+            {
+                output = "\nStorm Name: "+storms.get(i).getName()
+                        +"\nWind Speed: "+storms.get(i).getWindSpeed()+" mph"
+                        +"\nTemperature: "+storms.get(i).getTemp()+"°"
+                        +"\nClassification: "+storms.get(i).calcClass()
+                        +"\n"+storms.get(i).getAdvice();
+            }
+        }
+        return output;
+    }
     public boolean removeStorm(String nameIn)
     {
         for (int i = 0; i < storms.size(); i++)
@@ -89,29 +127,33 @@ public class Center
         }
         return false;
     }
-    public int printWind(String nameIn)
+    public String editPrintWind(String nameIn)
     {
         for (int i = 0; i < storms.size(); i++)
         {
             if(storms.get(i).stormName.equals(nameIn))
             {
-                int windOut = storms.get(i).getWindSpeed();
-                return windOut;
+                int output = storms.get(i).getWindSpeed();
+                String print = Integer.toString(output);
+                return print;
             }
-        }    
-        return 0;
+            
+        }        
+        return null;
     }
-    public int printTemp(String nameIn)
+    public String editPrintTemp(String nameIn)
     {
         for (int i = 0; i < storms.size(); i++)
         {
             if(storms.get(i).stormName.equals(nameIn))
-            {                
-                int tempOut = storms.get(i).getTemp();
-                return tempOut;
+            {
+                int output = storms.get(i).getTemp();
+                String print = Integer.toString(output);
+                return print;
             }
-        }    
-        return 0;
+            
+        }        
+        return null;
     }
     public String editStorm(String nameIn, int windIn, int tempIn)  // should be ready
     {
@@ -136,8 +178,8 @@ public class Center
             if(storms.get(i).stormName.equals(nameIn))
             {
                 String output = "Storm Name: "+storms.get(i).getName()
-                        +"\nWind Speed: "+storms.get(i).getWindSpeed()
-                        +"\nTemperature: "+storms.get(i).getTemp()
+                        +"\nWind Speed: "+storms.get(i).getWindSpeed()+" mph"
+                        +"\nTemperature: "+storms.get(i).getTemp()+"°"
                         +"\nClassification: "+storms.get(i).calcClass()
                         +"\n"+storms.get(i).getAdvice();
                 return output;

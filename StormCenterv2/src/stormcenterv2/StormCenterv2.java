@@ -21,3 +21,14 @@ public class StormCenterv2 {
         gui.setVisible(true);    
     }        
 }
+
+/*Notes
+
+add function fixed by checking the size in each seperate if statement
+check that the advice beeing printed doesnt have extra characters or is missing something
+
+the edit function is working but the buttons are not going away after adding
+
+
+
+*/

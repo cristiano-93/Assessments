@@ -4,8 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Screen.java</file>
+            <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Tornado.java</file>
+            <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/StormCenterv2.java</file>
             <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Storm.java</file>
             <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Center.java</file>
+            <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Hurricane.java</file>
+            <file>file:/C:/Users/Cristiano/Documents/GitHub/Assessments/StormCenterv2/src/stormcenterv2/Blizzard.java</file>
         </group>
     </open-files>
 </project-private>

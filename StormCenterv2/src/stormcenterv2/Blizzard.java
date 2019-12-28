@@ -43,9 +43,9 @@ public class Blizzard extends Storm {
 
         if (wind >= 35) {
             if (wind >= 45 && temp <= -12) {
-                advice = "Keep warm, Do not travel unless absolutely essential.";
-            } else {
                 advice = "Keep warm and avoid all travel.";
+            } else {
+                advice = "Keep warm, \nDo not travel unless absolutely essential.";
             }
         } else if (wind <= 35) {
             advice = "Take care and avoid travel if possible.";

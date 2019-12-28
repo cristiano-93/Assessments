@@ -18,7 +18,6 @@ public class Screen extends JFrame implements ActionListener
         private JLabel lblwind;
         private JLabel lbltemp;
         private JLabel lbltype;
-        private JLabel lblclass;
 
         private JTextField txtname;
         private JTextField txtwind;
@@ -28,17 +27,13 @@ public class Screen extends JFrame implements ActionListener
         private JButton btnEdit;
         private JButton btnRemove;
         private JButton btnSearch;
+        private JButton btnApply;
+        private JButton btnCancel;
 
         private JTextArea txtascreen;
         private JComboBox combox;
-
-        String name;
-        String wind;
-        String temp;
-        String type;
         
-        private Center center;   
-        private Storm s;
+        private Center center;
         
     public Screen()
     {
@@ -62,20 +57,23 @@ public class Screen extends JFrame implements ActionListener
         lblname = new JLabel("Storm Name");
         lblwind = new JLabel("Wind Speed");
         lbltemp = new JLabel("Temperature");
-        lblclass = new JLabel("Classification");            
-
+        
         txtname = new JTextField(20);
         txtwind = new JTextField(20);
         txttemp = new JTextField(20);
 
         btnAdd = new JButton    ("   Add  ");  
         btnAdd.addActionListener(this);
-        btnEdit = new JButton   ("  Edit  "); 
+        btnEdit = new JButton   ("      Edit    "); 
         btnEdit.addActionListener(this);
         btnSearch = new JButton (" Search ");                 
         btnSearch.addActionListener(this);
         btnRemove = new JButton (" Remove ");
         btnRemove.addActionListener(this);
+        btnApply = new JButton (" Apply ");
+        btnApply.addActionListener(this);
+        btnCancel = new JButton (" Cancel ");
+        btnCancel.addActionListener(this);
 
         combox = new JComboBox();
         combox.addItem("Hurricane");
@@ -83,7 +81,7 @@ public class Screen extends JFrame implements ActionListener
         combox.addItem("Blizzard");
         combox.setBackground(Color.WHITE);
         
-        txtascreen = new JTextArea(6,36);
+        txtascreen = new JTextArea(8,36);
         txtascreen.setEditable(false);
 
         panelAddStorm = new JPanel(new GridBagLayout());
@@ -141,23 +139,30 @@ public class Screen extends JFrame implements ActionListener
         panelButtons.setLayout(new GridBagLayout());
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.gridwidth = 2;
         
         gbc.fill = GridBagConstraints.NONE;//check if leaving it at NONE affects end result
         gbc.gridy = 0;
         gbc.gridx = 0;
         panelButtons.add(btnAdd, gbc);
+                               
+        gbc.gridx = 2;
+        panelButtons.add(btnRemove, gbc);                                     
+               
+        gbc.gridx = 4;
+        panelButtons.add(btnSearch, gbc);
         
-        //gbc.fill = GridBagConstraints.NONE;        
-        gbc.gridx = 1;
-        panelButtons.add(btnRemove, gbc);
+        gbc.gridy = 1;
+        gbc.gridx = 0;
+        panelButtons.add(btnApply, gbc);
+        btnApply.setVisible(false);
         
-        //gbc.fill = GridBagConstraints.NONE;        
         gbc.gridx = 2;
         panelButtons.add(btnEdit, gbc);
         
-        //gbc.fill = GridBagConstraints.NONE;        
-        gbc.gridx = 3;
-        panelButtons.add(btnSearch, gbc);
+        gbc.gridx = 4;
+        panelButtons.add(btnCancel, gbc);
+        btnCancel.setVisible(false);
         
         this.add(panelButtons); 
     }
@@ -175,67 +180,61 @@ public class Screen extends JFrame implements ActionListener
         
         this.add(panelScreen);
     }
-    //@Override
+    public void clearInput()
+    {
+        txtname.setText(null);
+        txtwind.setText(null);
+        txttemp.setText(null);
+    }
     public void actionPerformed(ActionEvent ev)
         {            
             
             
             if(ev.getSource().equals(btnAdd))
             {
-                String type = combox.getSelectedItem().toString();                
-                String name = txtname.getText();
-                int wind = Integer.parseInt(txtwind.getText());
-                int temp = Integer.parseInt(txttemp.getText());
-                txtascreen.setText(null);                       //check if this line is required
-                center.addStorm(name, wind, temp, type);
-                String confirmation = "Storm has been Added";
-                txtascreen.append(confirmation);
-                
-//                if(type.equals("Hurricane"))
-//                {
-//                    int showConfirmDialog = JOptionPane.showConfirmDialog(null,center.addStorm(name, wind, temp, type), "Add Storm Message Box", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE);
-//
-//                    //txtascreen.setText("Storm Added");
-//                }
-//                else if(type.equals("Tornado"))
-//                {
-//                    txtascreen.append(center.addStormCheck(name, wind, temp, type));
-//                    //center.addStorm(name, wind, temp, type);                  
-//                }
-//                else if(type.equals("Blizzard"))
-//                {
-//                    center.addStorm(name, wind, temp, type);                    
-//                }
-//                else //not working and probably not needed
-//                {
-//                    txtascreen.setText("invalid");
-//                }
-                
-                
+                String typeInput = combox.getSelectedItem().toString();                
+                String nameInput = txtname.getText();
+                int windInput = Integer.parseInt(txtwind.getText());
+                int tempInput = Integer.parseInt(txttemp.getText());
+                txtascreen.setText(null);                       //check if this line is required                                                
+                txtascreen.append(center.addStorm(nameInput, windInput, tempInput, typeInput)+center.output(nameInput)); 
+                clearInput();
             }
-            else if(ev.getSource().equals(btnEdit))// not working. need to find a way to print the wind and temp to the textfield
-            {
+            else if(ev.getSource().equals(btnEdit))
+            {                
                 txtascreen.setText(null);
                 txtwind.setEditable(true);
+                txttemp.setEditable(true);
+                btnApply.setVisible(true);
+                btnCancel.setVisible(true);
                                                 
-                String nameIn = txtname.getText();                      
-                int windIn = Integer.parseInt(txtwind.getText());        
-                int tempIn = Integer.parseInt(txttemp.getText());
+                String nameIn = txtname.getText();
+                txtwind.setText(center.editPrintWind(nameIn));
+                txttemp.setText(center.editPrintTemp(nameIn));
                 
-                String windOut = center.printWind(nameIn)+"";
-                String tempOut = center.printTemp(nameIn)+"";
+                if(ev.getSource().equals(btnApply))
+                {                 
+                    int windIn = Integer.parseInt(txtwind.getText());        
+                    int tempIn = Integer.parseInt(txttemp.getText());
+                    txtascreen.setText(center.editStorm(nameIn, windIn, tempIn));
+                    btnApply.setVisible(false);
+                    btnCancel.setVisible(false);
+                }
+                else if(ev.getSource().equals(btnCancel))
+                {
+                    btnApply.setVisible(false);
+                    btnCancel.setVisible(false);                    
+                    //do i need something here?
+                }
                 
-                txtwind.setText(windOut);
-                txttemp.setText(tempOut);
                 
-                txtascreen.setText(center.editStorm(nameIn, windIn, tempIn));
                 
             }
             else if(ev.getSource().equals(btnSearch))               // might be working. check
             {
-                String name = txtname.getText();  
+                String nameIn = txtname.getText();  
                 txtascreen.setText(null);
-                txtascreen.append(center.searchStorm(name));                
+                txtascreen.append(center.searchStorm(nameIn));                
             }
             else if(ev.getSource().equals(btnRemove))
             {
