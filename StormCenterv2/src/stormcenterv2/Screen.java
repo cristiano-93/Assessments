@@ -62,17 +62,25 @@ public class Screen extends JFrame implements ActionListener
         txtwind = new JTextField(20);
         txttemp = new JTextField(20);
 
-        btnAdd = new JButton    ("   Add  ");  
+        btnAdd = new JButton    ("Add");
+        btnAdd.setPreferredSize(new Dimension(90, 30));
         btnAdd.addActionListener(this);
-        btnEdit = new JButton   ("      Edit    "); 
+        btnEdit = new JButton   ("Edit"); 
+        btnEdit.setPreferredSize(new Dimension(90, 30));
         btnEdit.addActionListener(this);
-        btnSearch = new JButton (" Search ");                 
+        btnSearch = new JButton ("Search");
+        btnSearch.setPreferredSize(new Dimension(90, 30));
         btnSearch.addActionListener(this);
-        btnRemove = new JButton (" Remove ");
+        btnRemove = new JButton ("Remove");
+        btnRemove.setPreferredSize(new Dimension(90, 30));
         btnRemove.addActionListener(this);
-        btnApply = new JButton (" Apply ");
+        btnApply = new JButton ("Apply");
+        btnApply.setPreferredSize(new Dimension(90, 30));
+        btnApply.setForeground(Color.green);
         btnApply.addActionListener(this);
-        btnCancel = new JButton (" Cancel ");
+        btnCancel = new JButton ("Cancel");
+        btnCancel.setPreferredSize(new Dimension(90, 30));
+        btnCancel.setForeground(Color.RED);
         btnCancel.addActionListener(this);
 
         combox = new JComboBox();
@@ -211,25 +219,30 @@ public class Screen extends JFrame implements ActionListener
                 String nameIn = txtname.getText();
                 txtwind.setText(center.editPrintWind(nameIn));
                 txttemp.setText(center.editPrintTemp(nameIn));
-                
-                if(ev.getSource().equals(btnApply))
-                {                 
-                    int windIn = Integer.parseInt(txtwind.getText());        
-                    int tempIn = Integer.parseInt(txttemp.getText());
-                    txtascreen.setText(center.editStorm(nameIn, windIn, tempIn));
-                    btnApply.setVisible(false);
-                    btnCancel.setVisible(false);
-                }
-                else if(ev.getSource().equals(btnCancel))
-                {
-                    btnApply.setVisible(false);
-                    btnCancel.setVisible(false);                    
-                    //do i need something here?
-                }
-                
-                
-                
             }
+                
+            else if(ev.getSource().equals(btnApply))
+            {                 
+                String nameIn = txtname.getText();
+                int windIn = Integer.parseInt(txtwind.getText());        
+                int tempIn = Integer.parseInt(txttemp.getText());
+                txtascreen.setText(center.editStorm(nameIn, windIn, tempIn)+center.output(nameIn));
+                
+                btnApply.setVisible(false);
+                btnCancel.setVisible(false);
+                clearInput();
+            }
+            else if(ev.getSource().equals(btnCancel))
+            {
+                btnApply.setVisible(false);
+                btnCancel.setVisible(false);  
+                clearInput();
+                //do i need something here?
+            }
+                
+                
+                
+            
             else if(ev.getSource().equals(btnSearch))               // might be working. check
             {
                 String nameIn = txtname.getText();  

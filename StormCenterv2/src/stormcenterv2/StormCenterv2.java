@@ -24,11 +24,11 @@ public class StormCenterv2 {
 
 /*Notes
 
-add function fixed by checking the size in each seperate if statement
-check that the advice beeing printed doesnt have extra characters or is missing something
 
-the edit function is working but the buttons are not going away after adding
+the test in Blizzard with 45 wind and -12 temp is not returning severe blizzard
 
+ask Ethan why does he use the wind and temp in the assertEquals.
 
+maybe take out the bz6 so it wont show error
 
 */
