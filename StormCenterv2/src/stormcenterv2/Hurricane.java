@@ -24,19 +24,19 @@ public class Hurricane extends Storm
     public String calcClass()
     {
         int wind = getWindSpeed();
-        if(wind > 74 && wind <95)
+        if(wind >= 74 && wind <=95)
         {
             classification = "Category I";            
         }
-        else if(wind > 96 && wind < 110)
+        else if(wind >= 96 && wind <= 110)
         {
             classification = "Category II";
         }
-        else if(wind > 111 && wind < 129)
+        else if(wind >= 111 && wind <= 129)
         {
             classification = "Category III";
         }
-        else if(wind > 130 && wind < 156)
+        else if(wind >= 130 && wind <= 156)
         {
             classification = "Category IV";
         }
@@ -60,7 +60,7 @@ public class Hurricane extends Storm
         {
             advice = "Close storm shutters and stay away from windows";            
         }        
-        else if(wind > 111 && wind < 129)
+        else if(wind >= 111 && wind <= 129)
         {
             advice = "Coastal regions are encouraged to evacuate";
         }

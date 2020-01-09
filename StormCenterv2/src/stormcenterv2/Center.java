@@ -60,10 +60,12 @@ public class Center
                     result = "Hurricane Added";
                     return result;
                 }
+                else 
+                    return result;
             }
             else
                 result = "Storm System is operating at full capacity"
-                            + "\nUnable to add any more storms to the system";
+                       + "\nUnable to add any more storms to the system";
         }
         else if (typeCheck(typeIn)==2)
         {
@@ -76,10 +78,12 @@ public class Center
                     result = "Tornado Added";
                     return result;
                 }
+                else 
+                    return result;
             }
             else
                 result = "Storm System is operating at full capacity"
-                            + "\nUnable to add any more storms to the system";
+                       + "\nUnable to add any more storms to the system";
         }
         else if (typeCheck(typeIn)==3)
         {
@@ -92,10 +96,12 @@ public class Center
                     result = "Blizzard Added";
                     return result;
                 }
+                else 
+                    return result;
             }
             else
                 result = "Storm System is operating at full capacity"
-                            + "\nUnable to add any more storms to the system";
+                       + "\nUnable to add any more storms to the system";
         }
         return result;
     } 

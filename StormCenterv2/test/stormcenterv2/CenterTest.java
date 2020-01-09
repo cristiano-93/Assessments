@@ -18,32 +18,11 @@ public class CenterTest {
     public CenterTest() {
     }
     /**
-     * Test of getStormList method, of class Center.
-     */
-    @Test
-    public void testGetStormList() {
-        System.out.println("getStormList");
-        Center instance = new Center();
-        ArrayList<Storm> expResult = null;
-        ArrayList<Storm> result = instance.getStormList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of alreadyExists method, of class Center.
      */
     @Test
     public void testAlreadyExists() {
-        System.out.println("alreadyExists");
-        String nameIn = "";
-        Center instance = new Center();
-        boolean expResult = false;
-        boolean result = instance.alreadyExists(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+          
     }
 
     /**
@@ -51,14 +30,7 @@ public class CenterTest {
      */
     @Test
     public void testTypeCheck() {
-        System.out.println("typeCheck");
-        String typeIn = "";
-        Center instance = new Center();
-        int expResult = 0;
-        int result = instance.typeCheck(typeIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -66,47 +38,18 @@ public class CenterTest {
      */
     @Test
     public void testAddStorm() {
-        System.out.println("addStorm");
-        String nameIn = "";
-        int windIn = 0;
-        int tempIn = 0;
-        String typeIn = "";
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.addStorm(nameIn, windIn, tempIn, typeIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Center c = new Center();
+        assertEquals("Tornado Added", c.addStorm("Tornado", 210, 10, "Tornado"));
+        assertEquals("Hurricane Added", c.addStorm("Hurricane", 310, 10, "Hurricane"));
+        assertEquals("Blizzard Added", c.addStorm("Blizzard", 120, 10, "Blizzard"));
+        assertEquals("Storm name already in the system", c.addStorm("Tornado", 210, 10, "Tornado"));
     }
-
-    /**
-     * Test of output method, of class Center.
-     */
-    @Test
-    public void testOutput() {
-        System.out.println("output");
-        String nameIn = "";
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.output(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of removeStorm method, of class Center.
      */
     @Test
     public void testRemoveStorm() {
-        System.out.println("removeStorm");
-        String nameIn = "";
-        Center instance = new Center();
-        boolean expResult = false;
-        boolean result = instance.removeStorm(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -114,14 +57,7 @@ public class CenterTest {
      */
     @Test
     public void testEditPrintWind() {
-        System.out.println("editPrintWind");
-        String nameIn = "";
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.editPrintWind(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -129,14 +65,7 @@ public class CenterTest {
      */
     @Test
     public void testEditPrintTemp() {
-        System.out.println("editPrintTemp");
-        String nameIn = "";
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.editPrintTemp(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -144,16 +73,7 @@ public class CenterTest {
      */
     @Test
     public void testEditStorm() {
-        System.out.println("editStorm");
-        String nameIn = "";
-        int windIn = 0;
-        int tempIn = 0;
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.editStorm(nameIn, windIn, tempIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -161,14 +81,7 @@ public class CenterTest {
      */
     @Test
     public void testSearchStorm() {
-        System.out.println("searchStorm");
-        String nameIn = "";
-        Center instance = new Center();
-        String expResult = "";
-        String result = instance.searchStorm(nameIn);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

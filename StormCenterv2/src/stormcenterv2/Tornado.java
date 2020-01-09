@@ -24,27 +24,27 @@ public class Tornado extends Storm
     {
         int wind = getWindSpeed();
         
-        if(wind > 40 && wind <72)
+        if(wind >= 40 && wind <= 72)
         {
             classification = "F0";            
         }
-        else if(wind > 73 && wind < 112)
+        else if(wind >= 73 && wind <= 112)
         {
             classification = "F1";
         }
-        else if(wind > 113 && wind < 157)
+        else if(wind >= 113 && wind <= 157)
         {
             classification = "F2";
         }
-        else if(wind > 158 && wind < 205)
+        else if(wind >= 158 && wind <= 205)
         {
             classification = "F3";
         }
-        else if(wind > 206 && wind < 260)
+        else if(wind >= 206 && wind <= 260)
         {
             classification = "F4";
         }
-        else if(wind > 261)
+        else if(wind >= 261)
         {
             classification = "F5";
         }
