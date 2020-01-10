@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stormcenterv2;
 
 /**
@@ -18,7 +13,6 @@ public class Hurricane extends Storm
     
     private String classification;
     private String advice;
-    private Storm s;
     
     @Override
     public String calcClass()

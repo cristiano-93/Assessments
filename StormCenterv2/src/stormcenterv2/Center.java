@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stormcenterv2;
 
 import java.util.ArrayList;
-
 /**
  *
  * @author Cristiano
@@ -14,11 +8,7 @@ import java.util.ArrayList;
 public class Center 
 {
     private ArrayList<Storm> storms = new ArrayList<>();
-    
-    public ArrayList<Storm> getStormList()
-    {
-        return storms;
-    }
+
     public boolean alreadyExists(String nameIn)
     {
         for (int i = 0; i < storms.size(); i++)
@@ -127,7 +117,7 @@ public class Center
         {
             if(storms.get(i).stormName.equals(nameIn))
             {
-                storms.remove(i);           //will this work or do i need to assign a index
+                storms.remove(i);         
                 return true;
             }
         }
@@ -142,8 +132,7 @@ public class Center
                 int output = storms.get(i).getWindSpeed();
                 String print = Integer.toString(output);
                 return print;
-            }
-            
+            }            
         }        
         return null;
     }
@@ -156,15 +145,12 @@ public class Center
                 int output = storms.get(i).getTemp();
                 String print = Integer.toString(output);
                 return print;
-            }
-            
+            }            
         }        
         return null;
     }
-    public String editStorm(String nameIn, int windIn, int tempIn)  // should be ready
-    {
-        //get details to the textfield
-        
+    public String editStorm(String nameIn, int windIn, int tempIn) 
+    {               
         for (int i = 0; i < storms.size(); i++)
         {
             if(storms.get(i).stormName.equals(nameIn))
@@ -177,7 +163,7 @@ public class Center
         }        
         return null;
     }
-    public String searchStorm(String nameIn)                        // should be ready
+    public String searchStorm(String nameIn)                       
     {
         for (int i = 0; i < storms.size(); i++)
         {
@@ -189,7 +175,7 @@ public class Center
                         +"\nClassification: "+storms.get(i).calcClass()
                         +"\n"+storms.get(i).getAdvice();
                 return output;
-            }   // do i need a else statement?????
+            }
         }
         return "Storm not found";
     }

@@ -45,13 +45,14 @@ public class Screen extends JFrame implements ActionListener
         this.setVisible(true);
         center = new Center();
        
-        //Initiate the components
+        //Initiating the components
         initComponents(); 
         AddPanelAddStorm();
         AddPanelButtons();
         AddPanelScreen();
     }
-    public void initComponents()
+    
+    private void initComponents()
     {    
         lbltype = new JLabel("Storm Type");
         lblname = new JLabel("Storm Name");
@@ -96,13 +97,13 @@ public class Screen extends JFrame implements ActionListener
         panelButtons = new JPanel(new GridBagLayout());
         panelScreen = new JPanel(new GridBagLayout());                        
     }
+    
     private void AddPanelAddStorm()
     {
         GridBagConstraints gbc = new GridBagConstraints();
         panelAddStorm.setLayout(new GridBagLayout());
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10);
-        //add insets??? look at end result
         
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridy = 0;
@@ -141,6 +142,7 @@ public class Screen extends JFrame implements ActionListener
         
         this.add(panelAddStorm);
     }
+    
     private void AddPanelButtons()
     {
         GridBagConstraints gbc = new GridBagConstraints();
@@ -149,7 +151,7 @@ public class Screen extends JFrame implements ActionListener
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.gridwidth = 2;
         
-        gbc.fill = GridBagConstraints.NONE;//check if leaving it at NONE affects end result
+        gbc.fill = GridBagConstraints.NONE;
         gbc.gridy = 0;
         gbc.gridx = 0;
         panelButtons.add(btnAdd, gbc);
@@ -174,6 +176,7 @@ public class Screen extends JFrame implements ActionListener
         
         this.add(panelButtons); 
     }
+    
     private void AddPanelScreen()
     {
         GridBagConstraints gbc = new GridBagConstraints();
@@ -188,12 +191,14 @@ public class Screen extends JFrame implements ActionListener
         
         this.add(panelScreen);
     }
-    public void clearInput()
+    
+    private void clearInput()
     {
         txtname.setText(null);
         txtwind.setText(null);
         txttemp.setText(null);
     }
+    
     public void actionPerformed(ActionEvent ev)
         {            
             
@@ -204,7 +209,7 @@ public class Screen extends JFrame implements ActionListener
                 String nameInput = txtname.getText();
                 int windInput = Integer.parseInt(txtwind.getText());
                 int tempInput = Integer.parseInt(txttemp.getText());
-                txtascreen.setText(null);                       //check if this line is required                                                
+                txtascreen.setText(null);                                     
                 txtascreen.append(center.addStorm(nameInput, windInput, tempInput, typeInput)+center.output(nameInput)); 
                 clearInput();
             }
@@ -219,8 +224,7 @@ public class Screen extends JFrame implements ActionListener
                 String nameIn = txtname.getText();
                 txtwind.setText(center.editPrintWind(nameIn));
                 txttemp.setText(center.editPrintTemp(nameIn));
-            }
-                
+            }                
             else if(ev.getSource().equals(btnApply))
             {                 
                 String nameIn = txtname.getText();
@@ -237,13 +241,8 @@ public class Screen extends JFrame implements ActionListener
                 btnApply.setVisible(false);
                 btnCancel.setVisible(false);  
                 clearInput();
-                //do i need something here?
-            }
-                
-                
-                
-            
-            else if(ev.getSource().equals(btnSearch))               // might be working. check
+            }                         
+            else if(ev.getSource().equals(btnSearch))              
             {
                 String nameIn = txtname.getText();  
                 txtascreen.setText(null);
@@ -257,7 +256,7 @@ public class Screen extends JFrame implements ActionListener
                 {
                     txtascreen.append("Storm "+nameIn+" has been removed");
                 }
-                else        //is this needed????
+                else       
                 {
                     txtascreen.append("Storm not found");
                 }

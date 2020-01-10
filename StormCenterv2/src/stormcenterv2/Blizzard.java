@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stormcenterv2;
-
 /**
  *
  * @author Cristiano
@@ -25,12 +19,14 @@ public class Blizzard extends Storm {
     public String calcClass() {
         int wind = getWindSpeed();
 
+        //there is a error in this method but i can't find it
         if (wind >= 35) {
             if (wind >= 45 && temp <= -12) {
                 classification = "Severe Blizzard";
             }
             classification = "Blizzard";
-        } else if (wind <= 35) {
+        }
+        else {
             classification = "Snow Storm";
         }
         return classification;
