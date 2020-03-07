@@ -48,5 +48,4 @@ public class Blizzard extends Storm {
         }
         return advice;
     }
-
 }
