@@ -1,0 +1,78 @@
+/* this CSS file is for flexbox testing */
+
+body {
+    background-color: lightblue;
+    font-size: 18px;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+    font-size: 25px;
+}
+
+#title {
+    border: 2px solid red;
+    display: flex;
+    margin: 10px auto 40px;
+    
+}
+
+#web_desc {
+    border: 2px solid blue;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: fit-content;
+}
+#options {
+    border: 2px solid green;
+    text-align: center;
+    padding: 20px;
+    width: fit-content;
+    margin: 5% auto 2%;
+}
+
+
+#thumbnails {
+    display: flex;
+    justify-content: center;
+    margin: 3% 1%;
+    padding: 20px;
+    border: 2px solid;
+    text-align: center;
+}
+section {
+    border: 2px solid red;
+    padding: 20px;
+}
+#thumb1, #thumb2, #thumb3 {
+    width: 200px;
+    height: 70%;
+    margin: 20px;
+}
+h4 {
+    border: 2px solid green;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+}
+
+
+
+@media (max-width : 900px) {
+
+    #thumbnails {
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;       
+        
+        border: 2px solid violet;
+    }
+    #thumb1, #thumb2, #thumb3 {
+        margin: 20px auto;
+    }
+    h4 {
+        margin: 20px auto;
+
+    }
+    
+}

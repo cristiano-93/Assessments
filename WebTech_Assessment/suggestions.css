@@ -1,0 +1,89 @@
+body {
+    background-color: slateblue;
+    font-size: 18px;
+}
+nav {
+    width: fit-content;
+    margin: 10px auto;
+}
+legend{
+    font-size: 25px;
+    text-align: center;
+}
+#suggestion_form {
+    border: 2px solid;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+#info_area {
+    width: 450px;
+    margin: 20px 20px 0 0 ;
+}
+#tips {
+    margin-top: 270px;
+}
+label {
+    margin: 10px;
+}
+#suggestion_area {
+    width: 450px;
+    margin: 20px auto 0 ;
+}
+#theme, #title {
+    float: right;
+    width: 120px;
+}
+#name, #email {
+    float: right;    
+}
+#theme_area {
+    border: 2px solid;
+    margin: 10px auto;
+    width: 373px;    
+}
+#describe {
+    border: 2px solid red;
+    margin: 20px auto;
+    width:  373px;  
+}
+#describe_title {
+    text-align: center;
+}
+#submit {
+    width: fit-content;
+    margin: 10px auto;
+}
+
+
+
+
+
+
+@media (max-width : 800px) {
+    body {
+        background-color: slategray;
+    }
+    #suggestion_form {
+        border: 2px solid;
+        margin: 10px auto;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #tips{
+        margin: 0;
+    }
+    #info_area {
+        border: 2px solid red;
+        margin: 20px auto;
+    }
+    #suggestion_area {
+       border: 2px solid green;
+       margin: 10px auto;
+
+    }
+
+}

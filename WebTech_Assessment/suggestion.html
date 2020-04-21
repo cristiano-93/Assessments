@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="suggestions.css">
+    <title>Suggestion</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <form action="#" id="suggestion_form" method="POST">
+
+        <!-- User Info -->
+        <div id="info_area">
+            <fieldset id="personal">
+                <legend>Personal Info</legend>
+                <p> <label for="name">Name*</label> <input type="text" id="name" name="name" placeholder="enter name"
+                    required></p>
+            <p> <label for="email">Email*</label> <input type="text" id="email" name="email" placeholder="enter email"
+                    required></p>
+            </fieldset>
+
+            <fieldset id="tips">
+                <legend>Tips</legend>
+                
+                <p>> Be clear in your description</p>
+                <p>> Remenber to provide links to related pages</p>
+                <p>> Include a link to a picture if you want us to add it with your Suggestion</p>
+                
+            </fieldset>
+        </div>
+        <div id="suggestion_area">
+            <fieldset id="your_suggestion">
+                <legend>Your Suggestion</legend>
+                <div id="theme_area">
+                    <p>
+                        <label for="theme">What theme is your suggestion?</label>
+                        <select name="theme" id="theme">
+                            <option value="">Select a Theme</option>
+                            <option value="1">Improve Yourself</option>
+                            <option value="2">Be Productive</option>
+                            <option value="3">Have Fun</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="title">Title of the suggestion</label>
+                        <input type="text" id="title" name="title" placeholder="Your Title">
+                    </p>
+                </div>
+                <div id="describe">
+                    <p id="describe_title">
+                        <label for="description">Describe your suggestion</label>
+                    </p>
+                    <p id="text_area">
+                        <textarea name="description" id="description" cols="50" rows="20" 
+                            maxlength="1000" placeholder="max 1000 characters"></textarea>
+                    </p>
+                </div>
+                <p id="submit">
+                    <input type="submit" value="Submit" id="submitButton">
+                </p>
+                
+            </fieldset>
+        </div>
+
+
+    </form>
+</body>
+</html>
