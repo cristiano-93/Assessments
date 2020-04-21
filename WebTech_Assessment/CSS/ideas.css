@@ -1,0 +1,41 @@
+body {
+    background-color: steelblue;
+}
+nav {
+    width: fit-content;
+    margin: auto;
+}
+#title {
+    width: fit-content;
+    margin: 20px auto;
+}
+#desc {
+    width: fit-content;
+    margin: 30px 50px;
+}
+.gridBox {
+    border: 2px solid red;
+    display: grid;
+    padding: 20px;
+    justify-content: space-evenly;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 20px;
+}
+.idea {
+    border: 2px solid green;
+    width: 100%;
+    background-color: grey;
+    color: orange;
+}
+.content {
+    text-align: center;
+    
+}
+
+
+
+
+@media (max-width : 850px) {
+    .gridBox {
+        grid-template-columns: 50% 50%;
+}
