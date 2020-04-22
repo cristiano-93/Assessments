@@ -31,6 +31,10 @@ nav {
     text-align: center;
     
 }
+#idea_TV {
+    background-image: url("/resources/TV_icon.png");
+    
+}
 
 
 
@@ -38,4 +42,5 @@ nav {
 @media (max-width : 850px) {
     .gridBox {
         grid-template-columns: 90%;
+    }
 }
