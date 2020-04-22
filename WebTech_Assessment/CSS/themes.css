@@ -37,5 +37,5 @@ nav {
 
 @media (max-width : 850px) {
     .gridBox {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 90%;
 }
