@@ -1,9 +1,11 @@
 body {
-    background-color: steelblue;
+    background-color: var(--white);
+    
 }
 nav {
     width: fit-content;
     margin: auto;
+    border: 2px solid red;
 }
 #title {
     width: fit-content;
@@ -25,16 +27,23 @@ nav {
     border: 2px solid green;
     width: 100%;
     background-color: grey;
-    color: orange;
+    color: darkblue;
 }
 .content {
     text-align: center;
     
 }
-#idea_TV {
-    background-image: url("/resources/TV_icon.png");
-    
-}
+
+/* --Background-- */
+
+#background {
+    background-color: var(--secondary);
+    height: 95vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
 
 

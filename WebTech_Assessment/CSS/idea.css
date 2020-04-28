@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+.background {
+    background-image: url("/resources/background_stripes.jpg");   
+    background-color: bisque; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 80%;
+    height: 1000px;
+    margin: 0 auto;
+}
