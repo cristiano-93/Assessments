@@ -1,14 +1,26 @@
 body {
     margin: 0;
-}
-.background {
-    background-image: url("/resources/background_stripes.jpg");   
-    background-color: bisque; 
-    background-position: center;
+    background-image: url("/resources/pencil_65.jpg");   
+    height: 95vh;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+nav {
+    width: fit-content;
+    margin: 10px auto;
+}
+.title {
+    width: fit-content;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: rgba(151, 151, 255, 0.5);
+    border-radius: 10px;
+}
+.content {
     width: 80%;
-    height: 1000px;
-    margin: 0 auto;
+    margin: 50px auto;
+    
 }
