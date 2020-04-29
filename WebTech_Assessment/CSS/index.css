@@ -1,16 +1,24 @@
-/* this CSS file is for flexbox testing */
-
 body {
     background-color: lightblue;
     font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
 }
 h1, h2, h3, h4 {
     text-align: center;
+    font-size: 20px;
+    background-color: rgba(83, 194, 228, 0.75);
+    border-radius: 7px;
+    padding: 5px;
+}
+h4 {
     font-size: 25px;
 }
 
 #title {
-    border: 2px solid red;
+    border: 2px solid blue;    
+    border-radius: 25px;
+    opacity: 0.75;
     display: flex;
     margin: 10px auto 40px;
     
@@ -24,7 +32,8 @@ h1, h2, h3, h4 {
     width: fit-content;
 }
 #options {
-    border: 2px solid green;
+    background-color: rgba(151, 151, 255, 0.75);
+    border-radius: 10px;
     text-align: center;
     padding: 20px;
     width: fit-content;
@@ -41,8 +50,9 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 section {
-    border: 2px solid red;
     padding: 20px;
+    border-radius: 25px;
+    background-color: rgba(0, 53, 201, 0.75);
 }
 #thumb1, #thumb2, #thumb3 {
     width: 200px;
@@ -50,7 +60,7 @@ section {
     margin: 20px;
 }
 h4 {
-    border: 2px solid green;
+    
     width: fit-content;
     padding: 20px;
     margin: auto;

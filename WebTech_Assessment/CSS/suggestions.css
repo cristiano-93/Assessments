@@ -1,6 +1,7 @@
 body {
     background-color: slateblue;
     font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 nav {
     width: fit-content;

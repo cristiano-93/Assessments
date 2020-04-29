@@ -1,6 +1,7 @@
 body {
     background-color: var(--white);
-    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
 }
 nav {
     background-repeat: no-repeat;
