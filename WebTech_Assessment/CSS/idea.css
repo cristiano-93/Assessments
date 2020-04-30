@@ -18,9 +18,11 @@ nav {
     padding: 10px;
     background-color: rgba(151, 151, 255, 0.5);
     border-radius: 10px;
+    color: #E3003C;
+    
 }
 .content {
     width: 80%;
     margin: 50px auto;
-    
+    color: #350a50;
 }

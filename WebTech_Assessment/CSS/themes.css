@@ -1,5 +1,4 @@
 body {
-    background-color: var(--white);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
 }
@@ -17,24 +16,29 @@ nav {
 #title {
     width: fit-content;
     margin: 20px auto;
+    color: #247ba0;
 }
 #desc {
     width: fit-content;
     margin: 30px 50px;
+    color: #E3003C;
 }
 .gridBox {
-    border: 2px solid red;
     display: grid;
     padding: 20px;
     justify-content: space-evenly;
     grid-template-columns: 30% 30% 30%;
     grid-gap: 20px;
 }
-.idea {
-    border: 2px solid green;
+.idea {    
     width: 100%;
-    background-color: grey;
-    color: darkblue;
+    background-color: #70c1b3;
+    border-radius: 15px;
+    color: #350a50;
+    padding: 10px;
+    opacity: 0.75;
+    
+    
 }
 .content {
     text-align: center;

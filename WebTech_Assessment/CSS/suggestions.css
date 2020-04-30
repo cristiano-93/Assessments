@@ -1,7 +1,8 @@
 body {
     background-color: slateblue;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #350a50;
 }
 nav {
     width: fit-content;
@@ -10,9 +11,10 @@ nav {
 legend{
     font-size: 25px;
     text-align: center;
+    color: #C90035;
+    
 }
 #suggestion_form {
-    border: 2px solid;
     margin: 10px auto;
     display: flex;
     flex-direction: row;
@@ -22,15 +24,22 @@ legend{
     width: 450px;
     margin: 20px 20px 0 0 ;
 }
+#personal {
+    border-radius: 10px;
+}
 #tips {
-    margin-top: 270px;
+    margin-top: 215px;
+    border-radius: 10px;
 }
 label {
     margin: 10px;
 }
 #suggestion_area {
     width: 450px;
-    margin: 20px auto 0 ;
+    margin: 20px auto 0;
+}
+#your_suggestion {
+    border-radius: 10px;
 }
 #theme, #title {
     float: right;
@@ -40,12 +49,12 @@ label {
     float: right;    
 }
 #theme_area {
-    border: 2px solid;
+    
     margin: 10px auto;
     width: 373px;    
 }
 #describe {
-    border: 2px solid red;
+   
     margin: 20px auto;
     width:  373px;  
 }
@@ -56,45 +65,43 @@ label {
     width: fit-content;
     margin: 10px auto;
 }
+#submitButton {
+    background-color: #f3ffbd;
+    padding: 5px;
+    width: 80px;
+    border-radius: 6px;
+    color: #ff1654;
+}
 
 
 
 /* --Background-- */
 
 #background {
-    background-color: var(--secondary);
+    background-image: url(/resources/suggestion_65.jpg);
     height: 95vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-position-y: 0px;
   }
 
 
 @media (max-width : 800px) {
-    body {
-        background-color: slategray;
-    }
     #suggestion_form {
-        border: 2px solid;
         margin: 10px auto;
         width: fit-content;
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;        
     }
     #tips{
         margin: 0;
     }
     #info_area {
-        border: 2px solid red;
         margin: 20px auto;
     }
     #suggestion_area {
-       border: 2px solid green;
        margin: 10px auto;
-
     }
 
 }
