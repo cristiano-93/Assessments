@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="/CSS/suggestions.css">
     <title>Suggestion</title>
 </head>
-<body>
+<body onload="main()">
     
     <div id="background">
         <nav>
             <a href="/index.html"><img src="/resources/home.png" alt="#"></a>           
         </nav>
-        <form action="#" id="suggestion_form" method="POST">
+        <form action="http://google.com" id="suggestion_form" method="GET">
 
             <!-- User Info -->
             <div id="info_area">
                 <fieldset id="personal">
                     <legend>Personal Info</legend>
-                    <p> <label for="name">Name*</label> <input type="text" id="name" name="name" placeholder="enter name"
-                        required></p>
-                <p> <label for="email">Email*</label> <input type="text" id="email" name="email" placeholder="enter email"
-                        required></p>
+                    <p> <label for="name">Name*</label> <input type="text" id="name" name="name" placeholder="enter name"></p>
+                    <p id="nameRequiredError" class="error" style="display: none; color: red;">Name is Required</p>
+                    <p><label for="email">Email*</label> <input type="text" id="email" name="email" placeholder="enter email"></p>
+                    <p id="emailRequiredError" class="error" style="display: none; color: red;">Email is Required</p>
                 </fieldset>
 
                 <fieldset id="tips">
