@@ -1,0 +1,28 @@
+body {
+    background-color: slateblue;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #350a50;
+}
+nav {
+    width: fit-content;
+    margin: 10px auto;
+}
+content {
+    height: fit-content;
+}
+h1 {
+    margin: 40px auto;
+    width: fit-content;
+}
+.title {
+    font-size: 22px;
+    font-style: italic;
+    margin: 40px 100px;
+}
+.text {
+    margin: 20px;
+}
+.option {
+    margin: 10px 40px;
+}
