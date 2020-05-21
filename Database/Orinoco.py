@@ -1,7 +1,7 @@
 import sqlite3
 #importing and implementing SQLite3 into the programm
 
-db = sqlite3.connect('C:/Users/Cristiano/assessment.db')
+db = sqlite3.connect('/assessment.db')
 cursor = db.cursor()
 
 #setting up some variables to use 
@@ -9,12 +9,33 @@ choice = 0
 shopperId = ''
 run = True
 
+
+
 #first page to select the shopper ID
 welcome = '    Welcome to the ORINOCO customer database    '
 print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n') # using this line to clear the terminal window
 print(welcome.center(100,'-'))
-print('\n')
+print('\n\n')
 customer_id = input('Input customer ID: ')
+
+idQuery = "SELECT shopper_id \
+            FROM shoppers \
+            WHERE UPPER(shopper_id)=UPPER(?)"
+
+cursor.execute(idQuery,(customer_id,))
+
+shopper_row = cursor.fetchone()
+
+if shopper_row:
+    print('\n')
+    print('ID is valid')
+    print('\n')
+
+else:
+    print('\n')
+    print('#####   ID is Invalid, exit program and try again   #####')
+    print('\n\n\n\n')
+
 
 #Menu
 while run :
@@ -29,7 +50,7 @@ while run :
     choice = int(input('Enter your choice: \n'))
 
     if(choice == 1):
-        print('choose 1')
+        print('You have choosen to display orders')
         
         sql_query = 'SELECT shopper_orders.order_id, \
                         shopper_orders.order_date, \
@@ -66,6 +87,28 @@ while run :
     
     elif(choice == 3):
         print('choose 3')
+        print('\n')
+
+        basket_check = ('SELECT product_description, \
+                            basket_contents.quantity, \
+                            basket_contents.price \
+                        FROM shopper_baskets \
+                            LEFT OUTER JOIN basket_contents ON shopper_baskets.basket_id = basket_contents.basket_id \
+                            LEFT OUTER JOIN products ON basket_contents.product_id = products.product_id \
+                        WHERE shopper_baskets.shopper_id = % s'% customer_id)
+
+        cursor.execute(basket_check)
+        result = cursor.fetchall()
+
+        if not result:
+            print('Basket is Empty')
+            print('\n')
+        else:
+            for IDs in result:
+                print(IDs)
+            print('\n')
+        
+        
         print('this option is not yet working')
     
     elif(choice == 4):

@@ -1,13 +1,15 @@
 What Now
 
-1- Background
+1- Background 
+
   With the current world pandemic, more and more people are forced to stay indoors and while that seems to be a blessing at first 
 people are running out of ideas on what to do indoors. With this website i look to offer people some new ideas to pass the time.
 
 2- Wireframes
+
   I layed out my pages so that they would have a homepage, a submission form, a page for each theme and then a page for each idea.
   
- 
+![Homepage](https://imgur.com/Wnd3Nd3)
 
 
 #1.1.2 Wire Frames
