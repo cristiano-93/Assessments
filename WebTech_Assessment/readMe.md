@@ -8,6 +8,7 @@ people are running out of ideas on what to do indoors. With this website i look 
 2- Wireframes
 
   I layed out my pages so that they would have a homepage, a submission form, a page for each theme and then a page for each idea.
+
 Homepage
 ![Homepage](https://imgur.com/Wnd3Nd3)
 
