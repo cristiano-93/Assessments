@@ -8,8 +8,21 @@ people are running out of ideas on what to do indoors. With this website i look 
 2- Wireframes
 
   I layed out my pages so that they would have a homepage, a submission form, a page for each theme and then a page for each idea.
-  
+Homepage
 ![Homepage](https://imgur.com/Wnd3Nd3)
+Mobile Homepage
+![Mobile Homepage](https://imgur.com/QGY3lXQ)
+Themes Page
+![Theme page](https://imgur.com/c8mFY4Z)
+Themes Mobile Page
+![mobile themes page](https://imgur.com/cIZN8Ho)
+Idea Page
+![idea page](https://imgur.com/3hUCpOr)
+Suggestion Page
+![suggestion page](https://imgur.com/fisd0CW)
+Suggestion Mobile Page
+![mobile suggestion page](https://imgur.com/YDmlCRn)
+
 
 
 #1.1.2 Wire Frames
