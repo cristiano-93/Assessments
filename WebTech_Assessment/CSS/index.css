@@ -2,8 +2,7 @@ body {
     background-color: lightblue;
     font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: normal;
-    
+    font-style: normal;    
 }
 h1, h2, h3, h4 {
     text-align: center;
@@ -99,7 +98,6 @@ footer {
     }
     h4 {
         margin: 20px auto;
-
     }
     
 }

@@ -10,9 +10,6 @@ nav {
     margin: auto;
     padding: 10px;
 }
-#home {
-    
-}
 #title {
     width: fit-content;
     margin: 20px auto;
@@ -36,13 +33,10 @@ nav {
     border-radius: 15px;
     color: #350a50;
     padding: 10px;
-    opacity: 0.75;
-    
-    
+    opacity: 0.75;    
 }
 .content {
-    text-align: center;
-    
+    text-align: center;    
 }
 
 /* --Background-- */
@@ -54,10 +48,7 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-
-
-
+}
 
 @media (max-width : 850px) {
     .gridBox {
