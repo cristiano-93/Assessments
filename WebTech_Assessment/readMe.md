@@ -11,53 +11,51 @@ people are running out of ideas on what to do indoors. With this website i look 
 
 Homepage
 
-![Homepage](https://imgur.com/Wnd3Nd3)
+![Homepage](https://i.imgur.com/Wnd3Nd3.jpg)
 
 Mobile Homepage
 
-![Mobile Homepage](https://imgur.com/QGY3lXQ)
+![Mobile Homepage](https://i.imgur.com/QGY3lXQ.jpg)
 
 Themes Page
 
-![Theme page](https://imgur.com/c8mFY4Z)
+![Theme page](https://i.imgur.com/c8mFY4Z.jpg)
 
 Themes Mobile Page
 
-![mobile themes page](https://imgur.com/cIZN8Ho)
+![mobile themes page](https://i.imgur.com/cIZN8Ho.jpg)
 
 Idea Page
 
-![idea page](https://imgur.com/3hUCpOr)
+![idea page](https://i.imgur.com/3hUCpOr.jpg)
 
 Suggestion Page
 
-![suggestion page](https://imgur.com/fisd0CW)
+![suggestion page](https://i.imgur.com/fisd0CW.jpg)
 
 Suggestion Mobile Page
 
-![mobile suggestion page](https://imgur.com/YDmlCRn)
+![mobile suggestion page](https://i.imgur.com/YDmlCRn.jpg)
 
 
 
+3- GDPR
 
+  In order to vomply with the GDPR regulations i created a privacy policy that explains how the website treats the users personal information.
+  As for the Cookie Policy i used a online resource to create it because my JavaScript is limited and the policy is a must have.
 
+4- Color choice
 
-#1.1.3 Colour Choices
-Document the colour scheme you have used for your website and why this was chosen?
+  I choose to use these colors because this is supposed to be a fun website.
 
-#1.1.4 Accessibility
-What measures have you taken to conform to W3C accessibility standards?
+5- Evaluation
 
-#1.2.5 GDPR
-What measures have you taken to conform to the General Data Protection Regulation?
+  With this project i tried to provide a website where people can see ideas and also suggest new ideas allowing for the expansion of the website.
+  
+  It was challenging to get the element positioning right but after researching several online guides and the language documentation i found what i needed to do it like i wanted.
 
-The following points should be addressed:
+  For testing i used the Chrome responsive website function to correctly position the elements in the desktop and mobile websites
 
-Creating a privacy policy
+  My designs are based on the experience i have navigating the Internet. That is why i tried to make a simple to use and eye pleasing website.
+  
 
-The 8 individual rights
-
-Adding an opt-in to any forms, if you have them
-
-#1.2.6 Distance Selling
-What measures have you taken conform to the online and distance selling act?

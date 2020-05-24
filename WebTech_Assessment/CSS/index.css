@@ -65,7 +65,15 @@ h4 {
     padding: 20px;
     margin: auto;
 }
-
+footer {
+    width: fit-content;
+    margin: 40px auto;
+    text-decoration: #350a50;
+    background-color: #96d5f0;
+    border-radius: 5px;
+    padding: 5px;
+    opacity: 0.75;
+}
 
 /* --Background-- */
 
